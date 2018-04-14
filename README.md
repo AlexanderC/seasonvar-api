@@ -6,8 +6,6 @@ means `NO KEY REQUIRED!`.
 
 # Prerequisites
 
-Development:
-
 - Node.js >=8.x
 
 # Installation and Usage 
