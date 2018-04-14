@@ -26,9 +26,11 @@ Usage:
 
 ```javascript
 const Seasonvar = require('seasonvar-api-nokey');
+//const Search = require('seasonvar-api-nokey/lib/search');
 
 const seasonvar = Seasonvar.create();
 const movies = await seasonvar.autocomplete('lucifer');
+// const movies = await seasonvar.top(Search.TOP_MONTH);
 const episodes = await movies[0].playlist();
 ```
 

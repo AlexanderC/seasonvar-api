@@ -1,6 +1,6 @@
 {
   "name": "seasonvar-api-nokey",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js api for seasonvar.ru",
   "main": "lib/index.js",
   "scripts": {
