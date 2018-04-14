@@ -1,0 +1,37 @@
+{
+  "name": "seasonvar-api-nokey",
+  "version": "1.0.0",
+  "description": "Node.js api for seasonvar.ru",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node $(npm bin)/mocha -t 20000",
+    "test:v": "DEBUG=seasonvar:* npm run test",
+    "test:vv": "DEBUG=* npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderC/seasonvar-api.git"
+  },
+  "keywords": [
+    "seasonvar.ru",
+    "seasonvar",
+    "api",
+    "serialy"
+  ],
+  "author": "AlexanderC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderC/seasonvar-api/issues"
+  },
+  "homepage": "https://github.com/AlexanderC/seasonvar-api#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cherio": "^1.0.0-rc.2",
+    "debug": "^3.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-url": "^1.0.4",
+    "mocha": "^5.1.0"
+  }
+}
