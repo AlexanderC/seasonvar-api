@@ -34,6 +34,8 @@ const movies = await seasonvar.autocomplete('lucifer');
 const episodes = await movies[0].playlist();
 ```
 
+For es5 compatibility you might use: `require('seasonvar-api-nokey/es5')`
+
 > For more examples see `example/` folder
 
 # Roadmap

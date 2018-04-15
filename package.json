@@ -1,9 +1,10 @@
 {
   "name": "seasonvar-api-nokey",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Node.js api for seasonvar.ru",
   "main": "lib/index.js",
   "scripts": {
+    "es5": "babel lib/ -d es5/",
     "test": "node $(npm bin)/mocha -t 20000",
     "test:v": "DEBUG=seasonvar:* npm run test",
     "test:vv": "DEBUG=* npm run test"
@@ -30,6 +31,8 @@
     "debug": "^3.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1",
     "chai": "^4.1.2",
     "chai-url": "^1.0.4",
     "mocha": "^5.1.0"
