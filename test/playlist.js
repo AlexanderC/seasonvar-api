@@ -11,8 +11,8 @@ chai.use(chaiUrlPlugin);
 
 const { expect } = chai;
 
-describe('Search', function securityMark() {
-  it('autocomplete', async function obtain() {
+describe('Playlist', function securityMark() {
+  it('obtain', async function obtain() {
     const client = Client.create();
     const movies = await new Search().autocomplete(client, 'luci');
     const secureMark = await new SecureMark().obtain(movies[0]);

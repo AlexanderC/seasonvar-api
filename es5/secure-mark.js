@@ -5,19 +5,28 @@ const FailedToObtainSecurityMark = require('./error/failed-to-obtain-security-ma
 
 class SecureMark {
   /**
-   * @param {Movie} movie
+   * @param {Movie} movies
    */
-  obtain(movie) {
+  obtain(...movies) {
     var _this = this;
 
     return _asyncToGenerator(function* () {
-      const movieHtml = yield movie.client.request(movie.path);
-      const secureMark = _this.matchSecurityMark(movieHtml);
+      let secureMark = null;
+
+      for (let movie of movies) {
+        const movieHtml = yield movie.client.request(movie.path);
+
+        secureMark = _this.matchSecurityMark(movieHtml);
+
+        if (secureMark) {
+          break;
+        }
+      }
 
       debug('secure mark:', secureMark);
 
       if (!secureMark) {
-        throw new FailedToObtainSecurityMark('Unable to match on any of movies pages.');
+        throw new FailedToObtainSecurityMark();
       }
 
       return secureMark;

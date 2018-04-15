@@ -31,7 +31,7 @@ const Seasonvar = require('seasonvar-api-nokey');
 const seasonvar = Seasonvar.create();
 const movies = await seasonvar.autocomplete('lucifer');
 // const movies = await seasonvar.top(Search.TOP_MONTH);
-const episodes = await movies[0].playlist();
+const episodes = await seasonvar.episodes(movies[0]);
 ```
 
 For es5 compatibility you might use: `require('seasonvar-api-nokey/es5')`

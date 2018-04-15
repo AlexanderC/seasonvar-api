@@ -1,7 +1,4 @@
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
 const debug = require('debug')('seasonvar:movie');
-const SecureMark = require('./secure-mark');
 const Playlist = require('./playlist');
 
 class Movie {
@@ -42,12 +39,8 @@ class Movie {
     return this.client.config.cdnUrl(`oblojka/${this.id}.jpg`);
   }
 
-  playlist() {
-    var _this = this;
-
-    return _asyncToGenerator(function* () {
-      return new Playlist(_this).obtain((yield new SecureMark().obtain(_this)));
-    })();
+  get playlist() {
+    return new Playlist(this);
   }
 
   toJSON() {
